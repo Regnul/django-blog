@@ -2,12 +2,12 @@
 
 {% block content %}
 <a class="backlink" href="/">Home</a>
-<h1>{{ post }}</h1>
+<h1>{{ object.title }}</h1>
 <p class="byline">
-  Posted by {{ post.author.username }} &mdash; {{ post.published_date }}
+  Posted by {{ post.author.username }} &mdash; {{ object.published_date }}
 </p>
 <div class="post-body">
-  {{ post.text }}
+  {{ object.text }}
 </div>
 <ul class="categories">
   {% for category in post.categories.all %}
