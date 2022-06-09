@@ -20,10 +20,9 @@ def stub_view(request, *args, **kwargs):
 
 class BloggingListView(ListView):
     published = Post.objects.exclude(published_date__exact=None)
-    queryset = published.order_by('-published_date')
-    template_name = 'blogging/list.html'
-    
-    
+    queryset = published.order_by("-published_date")
+    template_name = "blogging/list.html"
+
 
 # def list_view(request):
 #     published = Post.objects.exclude(published_date__exact=None)
@@ -33,10 +32,12 @@ class BloggingListView(ListView):
 #     body = template.render(context)
 #     return HttpResponse(body, content_type="text/html")
 
+
 class BloggingDetailView(DetailView):
     published = Post.objects.exclude(published_date__exact=None)
-    queryset = published.order_by('-published_date')
-    template_name = 'blogging/detail.html'
+    queryset = published.order_by("-published_date")
+    template_name = "blogging/detail.html"
+
 
 # def detail_view(request, post_id):
 #     published = Post.objects.exclude(published_date__exact=None)
