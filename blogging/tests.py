@@ -47,7 +47,7 @@ class FrontEndTestCase(TestCase):
     def test_list_only_published(self):
         resp = self.client.get("/")
         resp_text = resp.content.decode(resp.charset)
-        self.assertTrue("Activity Log" in resp_text)
+        self.assertTrue("Actions" in resp_text)
         for count in range(1, 11):
             title = "Post %d Title" % count
             if count < 6:
